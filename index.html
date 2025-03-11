@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #87CEEB; /* Nice blue background */
+            background-image: url(); /* Flowers in background */
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            margin: 20px 0;
+        }
+         .ponies {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center ponies horizontally */
+            align-items: center; /* Align ponies in the middle */
+            gap: 20px; /* Space between ponies */
+            width: 100%;
+            max-width: 600px; /* Keeps ponies within a manageable width */
+            margin: 0 auto; /* Centers the ponies section */
+            padding: 20px;
+}
+
+.pony img {
+    width: 280px;
+    height: 320px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.pony img.selected {
+    transform: scale(1.2);
+    border: 3px solid yellow;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>For My Love 💙</h1>
+        <p>You are the most amazing person in the world! Here's something special just for you.💖
+           You are my everything in this whole world. I love you so much and you are stuck with me forever
+           and ever. You are my precious girl and everything you do and think is important to me.
+           Also there is a lil secret about those ponies :p
+        </p>
+        
+        <h2>Some Lovely Videos</h2>
+        <iframe src="https://youtube.com/embed/rT_S-ShiOtQ?si=lMbayk4t0njq4_vr" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/j_jMoXgi8cI" allowfullscreen></iframe>
+        
+        <h2>Pick All the Ponies! 🐴</h2>
+        <div class="ponies" id="poniesContainer">
+            <div class="pony"><img src="https://static.wikia.nocookie.net/p__/images/8/8e/Rainbow_Dash_by_Nethear.png/revision/latest?cb=20210523055826&path-prefix=protagonist" alt="Pony 1" onclick="selectPony(this)"></div>
+            <div class="pony"><img src="https://static.wikia.nocookie.net/mlpne/images/7/79/Applejack.png/revision/latest?cb=20230802224043" alt="Pony 2" onclick="selectPony(this)"></div>
+            <div class="pony"><img src="https://static.wikia.nocookie.net/p__/images/3/31/Pinkie_Pie_transparent.png/revision/latest?cb=20210523061024&path-prefix=protagonist" alt="Pony 3" onclick="selectPony(this)"></div>
+            <div class="pony"><img src="https://static.wikia.nocookie.net/mlpne/images/a/af/Rarity.png/revision/latest?cb=20230827044319" alt="Pony 4" onclick="selectPony(this)"></div>
+        </div>
+        
+        <p id="puzzleMessage"></p>
+    </div>
+    
+    <script>
+        let selectedPonies = [];
+
+        function selectPony(img) {
+            if (!selectedPonies.includes(img)) {
+                selectedPonies.push(img);
+                img.classList.add('selected');
+            }
+            if (selectedPonies.length === 4) {
+                setTimeout(() => {
+                    window.location.href = "secret.html";
+                }, 500);
+            }
+        }
+
+        function randomizePonies() {
+            const ponies = document.querySelectorAll(".pony");
+            ponies.forEach(pony => {
+                pony.style.top = Math.random() * (window.innerHeight - 160) + "px";
+                pony.style.left = Math.random() * (window.innerWidth - 80) + "px";
+            });
+        }
+
+        window.onload = randomizePonies;
+    </script>
+</body>
+</html>

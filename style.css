@@ -1,0 +1,72 @@
+body {
+    background-color: #87CEEB; /* Nice blue background */
+    background-image: url('images/download.jpg'); /* Make sure to use relative path or an online URL */
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Adds semi-transparent background for readability */
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for better contrast */
+}
+
+h1, h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 10px; /* Rounded corners for iframe */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow around the video */
+}
+.ponies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center ponies horizontally */
+    align-items: center; /* Align ponies in the middle */
+    gap: 20px; /* Space between ponies */
+    width: 100%;
+    max-width: 600px; /* Keeps ponies within a manageable width */
+    margin: 0 auto; /* Centers the ponies section */
+    padding: 20px;
+}
+
+.pony img {
+    width: 700px;
+    height: 1200px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.pony img.selected {
+    transform: scale(1.2);
+    border: 3px solid yellow;
+}
+
+
+.pony img.selected {
+    transform: scale(1.2);
+    border: 3px solid yellow;
+    box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.8); /* Glow effect on selected ponies */
+}
+
+#puzzleMessage {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: yellow;
+}
